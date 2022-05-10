@@ -7,8 +7,8 @@ class producto(models.Model):
     aplica = fields.Char(string="Aplica")
     capacidad = fields.Char(string="Capacidad")
     cantidad_unidad = fields.Float(string="Cantidad por Unidad")
-    equipo = fields.Char(string="Equipo")
-    estado = fields.Char(string="Estado")
+    equipo = fields.Selection([('Si', 'Si'), ('No', 'No')], string="Equipo")
+    estado = fields.Selection([('Verificado', 'Verificado'), ('No verificado', 'No verificado')], string="Estado")
     marca = fields.Char(string="Marca")
 
 class lote(models.Model):
@@ -27,8 +27,8 @@ class informe(models.Model):
     informe_cantidad_unidad = fields.Float(related='product_id.cantidad_unidad', string="Cantidad por Unidad")
     informe_cantidad_total = fields.Float(string="Cantidad Total", compute='_compute_cantidad_total')
     informe_capacidad = fields.Char(related='product_id.capacidad', string="Capacidad")
-    informe_equipo_compuesto  = fields.Char(related='product_id.equipo', string="Equipo Compuesto")
-    informe_estado = fields.Char(related='product_id.estado', string="Estado")
+    informe_equipo_compuesto  = fields.Selection(related='product_id.equipo', string="Equipo Compuesto")
+    informe_estado = fields.Selection(related='product_id.estado', string="Estado")
     informe_marca = fields.Char(related='product_id.marca', string="Marca")
     informe_modelo = fields.Char(related='product_id.modelo', string="Modelo")
     informe_fecha_fabricacion = fields.Date(related='lot_id.lote_fecha_fabricacion', string="Fecha de fabricacion")
