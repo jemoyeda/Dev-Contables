@@ -17,7 +17,7 @@ class lote(models.Model):
     lote_capacidad = fields.Char(string="Capacidad")
     lote_equipos_compuestos = fields.Char(string="Equipos Compuestos")
     lote_estado = fields.Char(string="estado")
-    lote_fecha_fabricacion = fields.Date(string="Fecha de Fabricacion")
+    lote_fecha_fabricacion = fields.Date(string="Fecha de fabricacion")
     lote_marca = fields.Char(string="Marca")
     lote_modelo = fields.Char(string="Modelo")
 
@@ -31,7 +31,7 @@ class informe(models.Model):
     informe_estado = fields.Char(related='product_id.estado', string="Estado")
     informe_marca = fields.Char(related='product_id.marca', string="Marca")
     informe_modelo = fields.Char(related='product_id.modelo', string="Modelo")
-    informe_fecha_fabricacion = fields.Char(related='lot_id.lote_fecha_fabricacion', string="Fecha de fabricacion")
+    informe_fecha_fabricacion = fields.Date(related='lot_id.lote_fecha_fabricacion', string="Fecha de fabricacion")
     
     @api.depends('available_quantity', 'informe_cantidad_unidad')
     def _compute_cantidad_total(self):
