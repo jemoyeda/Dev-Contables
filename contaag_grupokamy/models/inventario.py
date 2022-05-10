@@ -1,7 +1,5 @@
-# -*- coding: utf-8 -*-
 from odoo import models, fields, api
 
-#Anadir campos al modelo plantilla de producto (product.template)
 class producto(models.Model):
     _inherit = 'product.template'
     
@@ -13,7 +11,6 @@ class producto(models.Model):
     estado = fields.Selection([('Verificado', 'No Verificado')])
     marca = fields.Char(string="Marca")
 
-#Anadir campos al modelo lotes/numeros de serie (stick.production.lot)
 class lote(models.Model):
     _inherit = 'stock.production.lot'
     
@@ -24,7 +21,6 @@ class lote(models.Model):
     lote_marca = fields.Char(string="Marca")
     lote_modelo = fields.Char(string="Modelo")
 
-#Anadir campos al modelo informe de inventario (stock.quant)
 class informe(models.Model):
     _inherit = 'stock.quant'
     
@@ -37,7 +33,6 @@ class informe(models.Model):
     informe_modelo = fields.Char(related='product_id.modelo', string="Modelo")
     informe_fecha_fabricacion = fields.Char(related='lot_id.lote_fecha_fabricacion', string="Fecha de fabricacion")
     
-    #Calcular cantidad total de inventario en el modelo informe
     @api.depends('available_quantity', 'informe_cantidad_unidad')
     def _compute_cantidad_total(self):
         for record in self:
