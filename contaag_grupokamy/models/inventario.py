@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from odoo import models, fields, api
 
-#Añadir campos al modelo plantilla de producto (product.template)
+#Anadir campos al modelo plantilla de producto (product.template)
 class producto(models.Model):
     _inherit = 'product.template'
     
@@ -13,7 +13,7 @@ class producto(models.Model):
     estado = fields.Selection([('Verificado', 'No Verificado')])
     marca = fields.Char(string="Marca")
 
-#Añadir campos al modelo lotes/numeros de serie (stick.production.lot)
+#Anadir campos al modelo lotes/numeros de serie (stick.production.lot)
 class lote(models.Model):
     _inherit = 'stock.production.lot'
     
@@ -24,7 +24,7 @@ class lote(models.Model):
     lote_marca = fields.Char(string="Marca")
     lote_modelo = fields.Char(string="Modelo")
 
-#Añadir campos al modelo informe de inventario (stock.quant)
+#Anadir campos al modelo informe de inventario (stock.quant)
 class informe(models.Model):
     _inherit = 'stock.quant'
     
