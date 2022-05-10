@@ -10,7 +10,7 @@
                 <field name="lote_modelo"/>
                 <field name="lote_capacidad"/>
                 <field name="lote_fecha_fabricacion"/>
-                <field name="lote_estado"/>
+                <field name="lote_estado" string="Estado"/>
                 <field name="lote_equipos_compuestos"/>
             </xpath>
         </field>

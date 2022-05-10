@@ -14,12 +14,19 @@ class producto(models.Model):
 class lote(models.Model):
     _inherit = 'stock.production.lot'
     
-    lote_capacidad = fields.Char(string="Capacidad")
+    lote_capacidad = fields.Char(string="Capacidad", related='product_id.capacidad')
     lote_equipos_compuestos = fields.Char(string="Equipos Compuestos")
-    lote_estado = fields.Char(string="Estado")
+    lote_estado = fields.Selection([('Perfecto', 'Perfecto'),
+                                    ('Defectuoso', 'Defectuoso')
+                                    ('Incompleto', 'Incompleto')
+                                    ('Con Parte(s) Defectuoso(s)', 'Con Parte(s) Defectuoso(s)')
+                                    ('En Reparacion', 'En Reparacion')
+                                    ('En Revision', 'En Revision')
+                                    ('Por Garantia', 'Por Garantia')
+                                    ])
     lote_fecha_fabricacion = fields.Date(string="Fecha de fabricacion")
-    lote_marca = fields.Char(string="Marca")
-    lote_modelo = fields.Char(string="Modelo")
+    lote_marca = fields.Char(string="Marca", related='product_id.marca')
+    lote_modelo = fields.Char(string="Modelo", related='product_id.modelo')
 
 class informe(models.Model):
     _inherit = 'stock.quant'
