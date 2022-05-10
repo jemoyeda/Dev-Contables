@@ -8,7 +8,7 @@ class producto(models.Model):
     capacidad = fields.Char(string="Capacidad")
     cantidad_unidad = fields.Float(string="Cantidad por Unidad")
     equipo = fields.Selection([('Si', 'No')])
-    estado = fields.Selection([('Verificado', 'No Verificado')])
+    estado = fields.Selection([('Verificado', 'Verificado'), ('No verificado', 'No verificado')], string="Estado")
     marca = fields.Char(string="Marca")
 
 class lote(models.Model):
@@ -16,7 +16,7 @@ class lote(models.Model):
     
     lote_capacidad = fields.Char(string="Capacidad")
     lote_equipos_compuestos = fields.Char(string="Equipos Compuestos")
-    lote_estado = fields.Selection([('Perfecto', 'Defectuoso', 'Incompleto', 'Con Parte(s) Defectuosa(s)', 'En Reparacion', 'En Revision', 'Por Garantia')])
+    lote_estado = fields.Char(string="estado")
     lote_fecha_fabricacion = fields.Date(string="Fecha de Fabricacion")
     lote_marca = fields.Char(string="Marca")
     lote_modelo = fields.Char(string="Modelo")
