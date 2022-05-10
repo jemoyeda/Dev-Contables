@@ -7,7 +7,7 @@ class producto(models.Model):
     aplica = fields.Char(string="Aplica")
     capacidad = fields.Char(string="Capacidad")
     cantidad_unidad = fields.Float(string="Cantidad por Unidad")
-    equipo = fields.Selection([('Si', 'No')])
+    equipo = fields.Char(string="Equipo")
     estado = fields.Selection([('Verificado', 'Verificado'), ('No verificado', 'No verificado')], string="Estado")
     marca = fields.Char(string="Marca")
 
