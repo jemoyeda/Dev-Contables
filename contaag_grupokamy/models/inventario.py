@@ -8,7 +8,7 @@ class producto(models.Model):
     capacidad = fields.Char(string="Capacidad")
     cantidad_unidad = fields.Float(string="Cantidad por Unidad")
     equipo = fields.Char(string="Equipo")
-    estado = fields.Selection([('Verificado', 'Verificado'), ('No verificado', 'No verificado')], string="Estado")
+    estado = fields.Char(string="Estado")
     marca = fields.Char(string="Marca")
 
 class lote(models.Model):
