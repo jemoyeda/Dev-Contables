@@ -7,7 +7,7 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='barcode']" position="after">
                 <field name="cantidad_unidad"/>
-                <field name="estado"/>
+                <field name="estado" string="Estado"/>
                 <field name="modelo"/>
                 <field name="capacidad"/>
                 <field name="marca"/>
