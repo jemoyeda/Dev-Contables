@@ -9,4 +9,4 @@ class producto(models.Model):
 class informe(models.Model):
     _inherit = 'stock.quant'
 
-    color_id_in = fields.Char(string='Color', related='product_id.color_id')
+    color_id_in = fields.Many2one(string='Color', related='product_id.color_id')
