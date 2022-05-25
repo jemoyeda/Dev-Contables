@@ -5,12 +5,3 @@ class colores(models.Model):
     _name = 'colores'
 
     name = fields.Char(string="Color")
-
-#creando campos del modulo
-class producto(models.Model):
-    inherit = 'product.template'
-
-    color_id = fields.Many2one('colores', string='Color')
-    
-    
-    
