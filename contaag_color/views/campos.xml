@@ -1,0 +1,10 @@
+<record id="inherit_view_product_template" model="ir.ui.view">
+    <field name="name">product.template.view.form.inherit</field>
+    <field name="model">product.product</field>
+    <field name="inherit_id" ref="product.product_normal_form_view"/>
+    <field name="arch" type="xml">
+        <xpath expr="//fields[@name = 'categ_id']" position="after">
+            <field name = 'color_id'/>
+        </xpath>
+    </field>
+</record>
