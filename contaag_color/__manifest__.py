@@ -12,10 +12,9 @@
     'data':[
 
             'views/menu_view.xml',
-            #'views/campos.xml',
+            'views/campos.xml',
             'security/colores_security.xml',
             'security/ir.model.access.csv',
         ],
-    
 
 }
