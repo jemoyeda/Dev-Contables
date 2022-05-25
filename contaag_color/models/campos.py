@@ -4,4 +4,4 @@ from odoo import models, fields
 class producto(models.Model):
     inherit = 'product.template'
 
-    color_id = fields.Many2one('colores', string='Color')
+    color_id = fields.Many2one(comodel_name='colores', string='Color')
