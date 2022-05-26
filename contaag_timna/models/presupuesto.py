@@ -28,10 +28,9 @@ class desviacion(models.Model):
             for record in self:
                   if record[('planned_amount')] == 0:
                         record[('desviacion')] = 0
+                  elif record[('practical_amount')] == 0:
+                        record[('desviacion')] = -1
                   else:
-                        if record[('practical_amount')] == 0:
-                              record[('desviacion')] = -1
-                        else:
-                              record[('desviacion')] = (record.practical_amount / record.planned_amount) + 1
+                        record[('desviacion')] = (record.practical_amount / record.planned_amount) + 1
       
       
