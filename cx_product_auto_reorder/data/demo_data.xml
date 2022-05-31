@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ 
+    Copyright (C) Cetmix OÜ
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU LESSER GENERAL PUBLIC LICENSE as
+    published by the Free Software Foundation, either version 3 of the
+    License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU LESSER GENERAL PUBLIC LICENSE for more details.
+
+    You should have received a copy of the GNU LESSER GENERAL PUBLIC LICENSE
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<odoo>
+    <data>
+        <record id="category_1" model="product.category">
+            <field name="name">Accessories</field>
+        </record>
+        <record id="reordering_template_1" model="cx.orderpoint.template">
+            <field name="company_id" ref="base.main_company" />
+            <field name="product_min_qty">5</field>
+            <field name="product_max_qty">10</field>
+            <field name="qty_multiple">1</field>
+            <field name="warehouse_id" eval="ref('stock.warehouse0')" />
+            <field
+                name="location_id"
+                model="stock.location"
+                eval="obj().env.ref('stock.warehouse0').lot_stock_id.id"
+            />
+            <field name="category_id" ref="category_1" />
+        </record>
+        <record id="product_1" model="product.product">
+            <field name="name">CPU</field>
+            <field name="categ_id" ref="category_1" />
+            <field name="standard_price">500.0</field>
+            <field name="list_price">700.0</field>
+            <field name="detailed_type">product</field>
+            <field name="weight">0.01</field>
+            <field name="uom_id" ref="uom.product_uom_unit" />
+            <field name="uom_po_id" ref="uom.product_uom_unit" />
+            <field name="default_code">VCARD-001</field>
+            <field
+                name="image_1920"
+                type="base64"
+                file="cx_product_auto_reorder/static/img/cpu.png"
+            />
+            <field name="no_auto_reorder">1</field>
+        </record>
+        <record id="product_2" model="product.product">
+            <field name="name">RAM</field>
+            <field name="categ_id" ref="category_1" />
+            <field name="standard_price">400.0</field>
+            <field name="list_price">500.0</field>
+            <field name="detailed_type">product</field>
+            <field name="weight">0.01</field>
+            <field name="uom_id" ref="uom.product_uom_unit" />
+            <field name="uom_po_id" ref="uom.product_uom_unit" />
+            <field name="default_code">RAM-001</field>
+            <field
+                name="image_1920"
+                type="base64"
+                file="cx_product_auto_reorder/static/img/ram.png"
+            />
+        </record>
+    </data>
+</odoo>
