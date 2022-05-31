@@ -10,7 +10,7 @@ class colores(models.Model):
 class producto(models.Model):
     _inherit = 'product.template'
 
-    color_id = fields.Many2one(comodel_name='colores', string='Color')
+    color_id = fields.Many2one(comodel_name='colores', string='Color', required=True)
 
 class informe(models.Model):
     _inherit = 'stock.quant'
