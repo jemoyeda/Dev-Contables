@@ -10,7 +10,7 @@ class tallas(models.Model):
 class producto_talla(models.Model):
     _inherit = 'product.template'
 
-    talla_id = fields.Many2one(string='Talla', comodel_name='tallas')
+    talla_id = fields.Many2one(string='Talla', comodel_name='tallas', required=True)
 
 class informe_talla(models.Model):
     _inherit = 'stock.quant'
