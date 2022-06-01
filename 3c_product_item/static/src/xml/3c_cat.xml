@@ -1,0 +1,18 @@
+<templates id="template" xml:space="preserve">
+
+<t t-name="CategoryButton" t-inherit="point_of_sale.CategoryButton" t-inherit-mode="extension" owl="1">
+        <xpath expr="//span[@class='category-button']" position="replace">
+
+
+        <span class="category-button" t-on-click="trigger('switch-category', props.category.id)">
+            
+            <div class="category-name3">
+                <t t-esc="props.category.name" />
+            </div>
+        </span>
+
+        </xpath>
+    </t>
+
+
+</templates>

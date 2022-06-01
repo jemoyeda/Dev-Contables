@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+
+
+
+
+            <t t-name="OrderReceipt" t-inherit="point_of_sale.ProductItem" t-inherit-mode="extension" owl="1">
+                    <xpath expr="//article[@class='product']" position="replace">
+
+
+                            <article class="product2" tabindex="0" t-on-keypress="spaceClickProduct"
+                                    t-on-click="trigger('click-product', props.product)"
+                                    t-att-data-product-id="props.product.id"
+                                    t-attf-aria-labelledby="article_product_{{props.product.id}}">
+                                
+                                        <div class="price-tag2">
+                                            <t t-esc="price" />
+                                        </div>
+
+                                        <div class="product-name2"  t-attf-id="article_product_{{props.product.id}}">
+                                            <t t-esc="props.product.display_name" />
+                                        </div>
+
+                            </article>
+
+
+                    </xpath>
+             </t>
+
+
+
+
+
+
+
+
+
+</templates>

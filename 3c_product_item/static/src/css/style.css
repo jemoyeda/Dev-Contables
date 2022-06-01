@@ -1,0 +1,64 @@
+/* 
+
+Author: Th3Company
+Website: https://th3company.com
+
+*/
+
+.product2{
+   height: 120px;
+   width: 150px; 
+   margin: 7px;
+   border-radius: 25px;
+   outline-style: solid;
+   outline-color: #17A589;
+   background: #142f40;
+   cursor: pointer;
+
+}
+
+.product-name2{
+    position:relative;
+    text-align:center;
+    top:28%;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 15px; 
+    color:#fff;
+
+}
+
+.product2 .price-tag2{
+    height: 25px;
+    position:relative;
+    top:0.1%;
+    border-radius: 90px 90px 0px 0px;
+    text-align: center;
+    width: 150px;
+    background: #17A589;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 15px;
+    color:#fff;
+}
+
+
+.pos .category-button{
+    height: 90px;
+    width: 150px; 
+    border-radius: 20px;
+    outline-style: solid;
+    outline-color: #142f40;
+    background: #17A589;
+    cursor: pointer;
+}
+
+.category-name3{
+    position:relative;
+    text-align:center;
+    top:28%;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: italic;
+    font-size: 20px; 
+    color:#fff;
+}
+
+
